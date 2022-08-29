@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Register</title>
-    <link  rel="stylesheet" href="assets/stylesheets/main.css">
-    <script src="/assets/js/register_html.js"></script> 
-    
+    <link  rel="stylesheet" href="assets/stylesheets/main.css">       
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 
 <body>
   
+
   
    
     <header class="primary-header container section-group">        
@@ -67,20 +68,19 @@
                 <form name="registerForm" action="#" method="post">
 
                     <fieldset class="register-group">
-                  
-                      <label>
-                        Name
-                        <input type="text" name="name"  placeholder="Full name" required>
-                      </label>
-                      <small></small>
-                  
-                      <label>
-                        Email
-                        <input type="email" name="email" placeholder="Email address" required>
-                      </label>
-                      <small></small>
-                      <label>
-                        Number of Passes
+                      <div class="input-group">
+                      <label> Name  </label>
+                      <span id="name-error"></span>
+                      <input type="text" name="name"  placeholder="Full name" id="contact-name" onkeyup ="validateName()"/>
+                      </div>
+                      
+
+                      <div class="input-group">
+                      <label> Email </label>
+                      <span id="email-error"></span>
+                      <input type="email" name="email" placeholder="Email address" id="contact-email" onkeypress ="validateEmail()"/>                                </div>
+                     
+                        <label> Number of Passes </label>
                         <select name="quantity" required>
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
@@ -88,17 +88,15 @@
                           <option value="4">4</option>
                           <option value="5">5</option>
                         </select>
-                      </label>
-                  
-                      <label>
-                        Comments
-                        <textarea name="comments"></textarea>
-                      </label>
-                  
+                        
+                      <div class="input-group">
+                      <label> Comments </label>
+                      <textarea id="commentTxt" name="comments" ></textarea>
+                      <span id="comment-error"></span>
                     </fieldset>
                   
-                    <input class="btn btn-default"  type="submit" name="submit" value="Purchase">
-                    
+                    <input class="btn btn-default" onsubmit="return validateForm()"  name="submit" value="Purchase"/>
+                    <span id="submit-error"></span>
                   
                   </form>
             </div>  
@@ -121,6 +119,8 @@
         </nav>
     </footer>
 
-    
+    <script src="./assets/js/registerFormValidation.js"></script>
+   
+     
 </body>
 </html>

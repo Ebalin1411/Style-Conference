@@ -374,7 +374,23 @@ textarea {
 .register-group textarea {
   height: 78px;
 }
+/*Style for error message */
 
+
+.input-group span{ 
+  bottom:12px;
+  right:17px;
+  font-size: 14px;
+  color: red;
+
+}
+.input-group span i{
+  color:seagreen;
+}
+
+#submit-error{
+  color: red;
+}
 /*table*/
 table{
   margin-bottom: 44px;
