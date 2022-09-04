@@ -78,7 +78,7 @@
                       <div class="input-group">
                       <label> Email </label>
                       <span id="email-error"></span>
-                      <input type="email" name="email" placeholder="Email address" id="contact-email" onkeypress ="validateEmail()"/>                                </div>
+                      <input type="email" name="email" placeholder="Email address" id="contact-email" onkeyup ="validateEmail()"/>                                </div>
                      
                         <label> Number of Passes </label>
                         <select name="quantity" required>
@@ -90,12 +90,13 @@
                         </select>
                         
                       <div class="input-group">
-                      <label> Comments </label>
+                     
+                      <label> Comments </label> <span id="comment-error"></span>
                       <textarea id="commentTxt" name="comments" ></textarea>
-                      <span id="comment-error"></span>
+                     
                     </fieldset>
                   
-                    <input class="btn btn-default" onsubmit="return validateForm()"  name="submit" value="Purchase"/>
+                    <input class="btn btn-default" onclick="limitText()"  name="submit" value="Purchase"/>
                     <span id="submit-error"></span>
                   
                   </form>

@@ -1,7 +1,7 @@
 var nameError=document.getElementById('name-error');
 var emailError=document.getElementById('email-error');
 var commentError=document.getElementById('comment-error');
-var submitError=document.getElementById('submit-error');
+//var submitError=document.getElementById('submit-error');
 /*---------UserName Validation-----------*/
 
 function validateName(){
@@ -30,7 +30,7 @@ function validateName(){
     var  emailkey =document.querySelector('contact-email');
 
      emailkey.addEventListener('keyup',(e)=>{
-    if (e.keycode === 13){
+    if ((e.keycode === 13) && (emailkey.length !="")){
         validateEmail()
     }   
 })
@@ -57,17 +57,28 @@ function validateEmail(){
     
    /*  Comment box validation */
 
-   var limitField =document.getElementById('commentTxt').value;  
-   limitNum =200;
+   var  Commentkey =document.querySelector('commentTxt');
 
-   function  limitText(limitField, limitNum) {
+   Commentkey.addEventListener('keyup',(e)=>{
 
-    if (limitField.value.length > limitNum) {
-       commentError.innerHTML('You comments should not exceed 200 letters');
+    if (e.keycode === 13){
+        limitText()
+    }   
+    })
+
+
+   function  limitText(){
+    var commentError=document.getElementById('comment-error');
+    var commenttxt =document.getElementById('commentTxt').value;  
+    limitNum =200;
+    console.log(commenttxt.length);
+
+    if (commenttxt.length > limitNum) {
+       commentError.innerHTML=('You comments should not exceed 200 letters');
        return false;
     }
     else{
-        commentError.innerHTML('<i class="fa fa-check-circle"></i>')
+        commentError.innerHTML=('<i class="fa fa-check-circle"></i>')
         return true;
     }
 }     
