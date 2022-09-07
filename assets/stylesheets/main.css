@@ -54,7 +54,7 @@ table {
 .grid{
   display: grid;
   grid-template-columns:70% 30% ;
-  grid gap:20px 10px
+  grid gap:20px 10px; 
 
 }
 .col-2-3{
@@ -76,9 +76,17 @@ table {
 .container{
   margin: 0 auto;
   padding-left: 30px;
+
   padding-right: 30px;
-  width: 960px;
+ /* width: 960px;*/  
 }
+@media only screen and (min-width: 960px){
+  .container{
+    width:960px;
+  }
+  
+}
+
 /*
   ========================================
   Typography
@@ -147,10 +155,16 @@ h1, h3, h4, h5, p {
 }
 .section-group {
   display: flex;
-  flex-direction: row;
-
-
+  flex-direction: column;
 }
+/* */
+@media only screen and (min-width: 640px){
+  .section-group{
+    flex-direction: row;
+  }
+  
+}
+
 .primary-footer {
   display: flex;
   justify-content: space-between;
@@ -258,10 +272,34 @@ header{
   text-transform: uppercase;
   flex-grow: 0.75;
 } 
-.header-right-section{
-  flex-grow: 1;
+/* for mobile*/
+.barIcon{
+  display: unset;
+  display: flex;
+  flex-direction: column;
+  float: right;  
+ padding: 2px;
 }
+.header-right-section{
+  display: none;
+}
+
+@media only screen and (min-width: 600px){
+
+  .header-right-section{
+     display: unset;
+     flex-grow: 1;
+ 
+    }
+    .barIcon{
+      display:none;
+      
+    
+    }
+}
+
 .primary-header a,
+
 .primary-footer a {
   color: #fff;
 }
@@ -272,12 +310,12 @@ header{
 
 .row {
   background: #fff;
-  min-width: 960px;
+ /* min-width: 960px;*/
   padding: 66px 0 44px 0;
 } 
 .row,
 .row-alt {
-  min-width: 960px;
+  /*min-width: 960px;*/
 } 
 
 .row-alt {
